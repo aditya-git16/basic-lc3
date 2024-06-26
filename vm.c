@@ -61,3 +61,80 @@ enum{
     OP_TRAP // Execute Trap
 };
 
+// Main loop
+int main(int argc , const char* argv[]){
+
+    // Load Arguements
+
+    // Setup
+
+    reg[R_COND] = FL_ZRO;
+
+    // Set PC to starting position
+    // 0x3000 is the default
+
+    enum {
+        PC_START = 0x3000
+    };
+    reg[R_PC] = PC_START;
+
+    int running = 1 ;
+    while (running)
+    {
+        // Fetch
+        uint16_t instr = mem_read(reg[R_PC]++);
+        uint16_t op = instr >> 12;
+
+        switch(op)
+        {
+            case OP_ADD:
+            // logic
+            break;
+            case OP_AND:
+            //logic
+            break;
+            case OP_NOT:
+            // logic
+            break;
+            case OP_BR:
+            // Logic
+            break;
+            case OP_JMP:
+            // Logic
+            break;
+            case OP_JSR:
+            // Logic
+            break;
+            case OP_LD:
+            // Logic
+            break;
+            case OP_LDI:
+            // logic
+            break;
+            case OP_LDR:
+            // logic 
+            break;
+            case OP_LEA:
+            // logic
+            break;
+            case OP_ST:
+            // logic
+            break;
+            case OP_STI:
+            // logic
+            break;
+            case OP_STR:
+            // logic
+            break;
+            case OP_TRAP:
+            // logic
+            break;
+            case OP_RES:
+            case OP_RTI:
+            default:
+            // Bad Opcode logic
+            break;
+        } 
+    }
+    // Shutdown
+}

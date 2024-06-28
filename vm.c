@@ -65,6 +65,19 @@ enum{
 int main(int argc , const char* argv[]){
 
     // Load Arguements
+    if (argc < 2){
+
+        // Show usage string
+        printf("lc3 [image-file] ...\n");
+        exit(2);
+    }
+
+    for (int j=1 ; j < argc ; ++j){
+        if(!read_image(argv[j])){
+            printf("failed to load image: %s \n" , argv[j]);
+            exit(1);
+        }
+    }
 
     // Setup
 
@@ -137,4 +150,5 @@ int main(int argc , const char* argv[]){
         } 
     }
     // Shutdown
+    
 }
